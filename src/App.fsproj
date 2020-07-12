@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Global/Router.fs" />
+    <Compile Include="Helper/Data.fs" />
+    <Compile Include="Components/RevenueReport.fs" />
+    <Compile Include="Pages/CounterPage.fs" />
+    <Compile Include="Pages/NewberryRevenuePage.fs" />    
+    <Compile Include="AppPath.fs" />
+    <Compile Include="Main.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Fable.Browser.Dom" Version="1.2.0" />
+    <PackageReference Include="Fable.Elmish.Debugger" Version="3.0.3" />
+    <PackageReference Include="Fable.Elmish.HMR" Version="4.0.1" />
+    <PackageReference Include="Fable.Elmish.React" Version="3.0.1" />
+    <PackageReference Include="Fable.Fetch" Version="2.2.0" />
+    <PackageReference Include="Fable.Promise" Version="2.1.0" />
+    <PackageReference Include="Fable.SimpleHttp" Version="3.0.0" />
+    <PackageReference Include="Fable.SimpleJson" Version="3.9.0" />
+    <PackageReference Include="Feliz" Version="1.5.0" />
+    <PackageReference Include="Feliz.MaterialUI" Version="1.0.1" />
+    <PackageReference Include="Feliz.MaterialUI.MaterialTable" Version="1.4.0" />
+    <PackageReference Include="Feliz.Router" Version="2.1.0" />
+    <PackageReference Include="Feliz.UseDeferred" Version="1.1.1" />
+    <PackageReference Include="Zanaptak.TypedCssClasses" Version="0.2.0" />
+  </ItemGroup>
+</Project>
