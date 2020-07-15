@@ -3,11 +3,11 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Global/Router.fs" />
+    <Compile Include="Global/Models.fs" />
     <Compile Include="Helper/Data.fs" />
     <Compile Include="Components/RevenueReport.fs" />
     <Compile Include="Pages/CounterPage.fs" />
-    <Compile Include="Pages/NewberryRevenuePage.fs" />    
+    <Compile Include="Pages/NewberryRevenuePage.fs" />
     <Compile Include="AppPath.fs" />
     <Compile Include="Main.fs" />
   </ItemGroup>

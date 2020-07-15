@@ -1,13 +1,15 @@
 module NBData.Components
 
 open Feliz
+open NBData.Models
 open NBData.Data
 open Feliz.UseDeferred
 open Feliz.MaterialUI
 open Feliz.MaterialUI.MaterialTable
 open Fable.Core.Experimental
 
-type State = { Rows: BudgetRow list }
+type State =
+    { Rows: BudgetRow list}
 
 let getTableHeader =
     Html.thead

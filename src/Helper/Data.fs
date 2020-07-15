@@ -3,17 +3,7 @@ module NBData.Data
 open Fable
 open Fable.SimpleJson
 open Fable.SimpleHttp
-
-type BudgetRow =
-    { Id: int
-      FiscalYear: string
-      RevenueCode: int
-      Description: string
-      Income: float
-      Budget: float
-      Projected: float
-      Proposed: float
-      ProjectedFiscalYear: string }
+open NBData.Models
 
 let getBudget (path: string): Async<BudgetRow list> =
     async {

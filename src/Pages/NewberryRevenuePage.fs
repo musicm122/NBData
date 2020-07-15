@@ -3,10 +3,8 @@ module Pages.NewberryRevenuePage
 open Feliz
 open NBData.Data
 open Feliz.UseDeferred
-open Feliz.MaterialUI
-open Feliz.MaterialUI.MaterialTable
-open Fable.Core.Experimental
 open NBData.Components
+open NBData.Models
 
 let budgetSourcePath =
     "../json/Newberry_Revenue_Proposal_2020.json"
@@ -18,9 +16,9 @@ let getBudgetData =
     }
 
 let render =
-    React.functionComponent (fun () ->
+    React.functionComponent (fun (props: RevenueQueryData) ->
         let budgetData = React.useDeferred (getBudgetData, [||])
-
+        let hasFilters = props.Description.Trim().Length > 0 || props.Year.Trim().Length > 0
         let dataRowsResult =
             match budgetData with
             | Deferred.HasNotStartedYet -> Html.none
@@ -32,7 +30,19 @@ let render =
                           "fa-spin"
                           "fa-2x" ] ]
             | Deferred.Failed errorstate -> Html.div errorstate.Message
-            | Deferred.Resolved content -> revenueReport' { Rows = content }
+            | Deferred.Resolved content ->
+                match props with 
+                | p when p.Description.Trim().Length > 0 -> 
+                    let filteredRows = 
+                        content |> 
+                            List.filter(fun (row:BudgetRow) -> row.FiscalYear = props.Year)
+                    revenueReport' { Rows = filteredRows;  }    
+                | p when p.Year.Trim().Length > 0 -> 
+                    let filteredRows = 
+                        content |> 
+                            List.filter(fun (row:BudgetRow) -> row.FiscalYear = props.Year)
+                    revenueReport' { Rows = filteredRows;  }        
+                | false -> 
+                    revenueReport' { Rows = content;  }
 
         Html.div [ dataRowsResult ])
-
