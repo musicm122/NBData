@@ -1,3 +1,10 @@
+NewberryData
+This test repo is a web app using Fable/Feliz to display budget data from Newberry County (SC) an effort to make the information more digestable and transparent.
+
+https://www.newberrycounty.net/departments/administration/finance/budgets
+
+----
+
 # Feliz Template
 
 This template gets you up and running with a simple web app using [Fable](http://fable.io/), [Elmish](https://fable-elmish.github.io/) and [Feliz](https://github.com/Zaid-Ajaj/Feliz).
