@@ -11,7 +11,7 @@
         "@material-ui/core": "^4.11.0",
         "@material-ui/lab": "^4.0.0-alpha.56",
         "material-design-icons": "^3.0.1",
-        "material-table": "^1.64.0",
+        "material-table": "^1.69.3",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "remotedev": "^0.2.9"
